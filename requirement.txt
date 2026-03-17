@@ -1,0 +1,30 @@
+# AutoRedTeam-LLM — Python Dependencies
+# Install with:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+#   pip install -r requirements.txt
+
+# ── Core ML ────────────────────────────────────────────────────────────────────
+transformers==4.46.3
+accelerate==1.1.1
+bitsandbytes==0.44.1
+sentence-transformers==3.3.1
+
+# ── HuggingFace ────────────────────────────────────────────────────────────────
+huggingface-hub==0.26.2
+tokenizers==0.20.3
+safetensors==0.4.5
+
+# ── Data ───────────────────────────────────────────────────────────────────────
+pandas==2.2.3
+numpy==1.26.4
+
+# ── Dashboard ──────────────────────────────────────────────────────────────────
+streamlit==1.40.0
+plotly==5.24.1
+
+# ── Utilities ──────────────────────────────────────────────────────────────────
+tqdm==4.67.1
+regex==2024.11.6
+
+# ── NOTE: PyTorch must be installed separately with CUDA support ───────────────
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
