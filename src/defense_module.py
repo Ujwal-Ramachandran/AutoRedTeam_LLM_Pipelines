@@ -316,7 +316,8 @@ def compare_from_existing_files() -> None:
         return
 
     # Group files by model
-    baselines: dict[str, pd.DataFrame] = {}
+    _CATEGORIES = ["jailbreak", "prompt_injection", "pii_extraction"]
+    baseline_frames: dict[str, list[pd.DataFrame]] = {}
     defended: dict[str, dict[str, pd.DataFrame]] = {}
 
     for path in smoke_files:
@@ -331,12 +332,28 @@ def compare_from_existing_files() -> None:
                 model_key = parts[: -(len(d) + 1)]
                 break
 
-        if matched_defense is None:
-            # Baseline file — model key is the remainder
-            model_key = parts
-            baselines[model_key] = pd.read_json(path)
-        else:
+        if matched_defense is not None:
             defended.setdefault(model_key, {})[matched_defense] = pd.read_json(path)
+        else:
+            # Check if suffix is a category (category-split baseline)
+            matched_category = None
+            for cat in _CATEGORIES:
+                if parts.endswith(f"_{cat}"):
+                    matched_category = cat
+                    model_key = parts[: -(len(cat) + 1)]
+                    break
+
+            if matched_category is not None:
+                baseline_frames.setdefault(model_key, []).append(pd.read_json(path))
+            else:
+                # Single combined baseline file
+                model_key = parts
+                baseline_frames.setdefault(model_key, []).append(pd.read_json(path))
+
+    baselines: dict[str, pd.DataFrame] = {
+        m: pd.concat(frames, ignore_index=True)
+        for m, frames in baseline_frames.items()
+    }
 
     if not baselines:
         print("No baseline smoke_test files found (files without a defense suffix).")
@@ -423,16 +440,28 @@ def main() -> None:
         config.DEFENSE_STRATEGIES if args.defense == "all" else [args.defense]
     )
 
-    # Check for existing baseline
-    baseline_path = config.RESULTS_DIR / f"smoke_test_{args.model}.json"
-    if not baseline_path.exists():
+    # Load baseline — supports both a single combined file and category-split files
+    _CATEGORIES = ["jailbreak", "prompt_injection", "pii_extraction"]
+    baseline_frames = []
+
+    single_path = config.RESULTS_DIR / f"smoke_test_{args.model}.json"
+    if single_path.exists():
+        baseline_frames.append(pd.read_json(single_path))
+    else:
+        for cat in _CATEGORIES:
+            cat_path = config.RESULTS_DIR / f"smoke_test_{args.model}_{cat}.json"
+            if cat_path.exists():
+                baseline_frames.append(pd.read_json(cat_path))
+
+    if not baseline_frames:
         print(
-            f"Baseline file not found: {baseline_path}\n"
+            f"No baseline files found for model '{args.model}'.\n"
+            "Expected smoke_test_{model}.json or smoke_test_{model}_<category>.json in results/.\n"
             "Run test_model_runner.py first to generate baseline results."
         )
         return
 
-    baseline_df = pd.read_json(baseline_path)
+    baseline_df = pd.concat(baseline_frames, ignore_index=True)
     defense_dfs: dict[str, pd.DataFrame] = {}
 
     for defense in defenses_to_run:

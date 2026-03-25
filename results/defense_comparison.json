@@ -1,0 +1,30 @@
+[
+  {
+    "model": "llama",
+    "category": "jailbreak",
+    "baseline_asr": 0.74,
+    "combined_asr": 0.64,
+    "combined_reduction": 0.1351
+  },
+  {
+    "model": "llama",
+    "category": "pii_extraction",
+    "baseline_asr": 0.74,
+    "combined_asr": 0.56,
+    "combined_reduction": 0.2432
+  },
+  {
+    "model": "llama",
+    "category": "prompt_injection",
+    "baseline_asr": 0.42,
+    "combined_asr": 0.32,
+    "combined_reduction": 0.2381
+  },
+  {
+    "model": "llama",
+    "category": "overall",
+    "baseline_asr": 0.6333,
+    "combined_asr": 0.5067,
+    "combined_reduction": 0.2055
+  }
+]

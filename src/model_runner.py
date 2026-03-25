@@ -15,6 +15,7 @@ Usage (standalone):
     runner.unload()
 """
 
+import gc
 import logging
 import sys
 from pathlib import Path
@@ -114,6 +115,7 @@ class ModelRunner:
         del self.tokenizer
         self.model = None
         self.tokenizer = None
+        gc.collect()
         torch.cuda.empty_cache()
         logger.info(f"Model '{self.model_key}' unloaded. CUDA cache cleared.")
 
