@@ -58,7 +58,7 @@ The pipeline automatically downloads, benchmarks, and adds it to the dashboard. 
 | Mistral | `mistralai/Mistral-7B-Instruct-v0.3` | 7B |
 | Qwen 2.5 | `Qwen/Qwen2.5-7B-Instruct` | 7B |
 
-All models run locally via 4-bit NF4 quantization — no API keys needed.
+All models run locally via 4-bit NF4 quantization - no API keys needed.
 
 ---
 
@@ -140,10 +140,10 @@ streamlit run dashboard/app.py
 
 ## 📊 Dashboard Features
 
-- **Overview heatmap** — Attack Success Rate per model × attack category
-- **Model deep dive** — Vulnerability breakdown per model
-- **Defense analysis** — Before vs after defense comparison
-- **Attack browser** — Browse all prompts, responses, and labels with filters
+- **Overview heatmap** - Attack Success Rate per model × attack category
+- **Model deep dive** - Vulnerability breakdown per model
+- **Defense analysis** - Before vs after defense comparison
+- **Attack browser** - Browse all prompts, responses, and labels with filters
 
 ---
 
@@ -199,7 +199,7 @@ python src/pipeline.py --models your_model
 ```
 4. Results automatically appear in the dashboard.
 
-> **Note:** Models must be instruction-tuned and support chat templates. 4-bit quantization is applied automatically — ensure you have 8GB+ VRAM.
+> **Note:** Models must be instruction-tuned and support chat templates. 4-bit quantization is applied automatically - ensure you have 8GB+ VRAM.
 
 ---
 
@@ -232,3 +232,7 @@ This tool is intended for **security research and model evaluation only**. All a
 **Ujwal Ramachandran**
 MSc Cyber Security, Nanyang Technological University
 [LinkedIn](https://www.linkedin.com/in/ujwal-ramachandran/) · [GitHub](https://github.com/Ujwal-Ramachandran)
+
+
+
+<!-- #### Add a telegram bot - Explore -->

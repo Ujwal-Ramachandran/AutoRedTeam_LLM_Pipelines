@@ -167,7 +167,7 @@ class ModelRunner:
         Mistral-v0.1 and similar weaker models sometimes produce an empty string
         or a bare '...' when they decline a prompt without generating a real
         refusal message.  Downstream (classifier.py) treats REFUSAL_MARKER the
-        same as any other refusal phrase, so this keeps the CSV readable and the
+        same as any other refusal phrase, so this keeps the json readable and the
         classifier logic simple.
 
         Args:
