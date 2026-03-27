@@ -309,13 +309,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-#   python src/test_model_runner.py --model llama --prompts pii_extraction
-
-#   python src/test_model_runner.py --model mistral --prompts jailbreak
-#   python src/test_model_runner.py --model mistral --prompts prompt_injection
-#   python src/test_model_runner.py --model mistral --prompts pii_extraction
-
-#   python src/test_model_runner.py --model qwen --prompts prompt_injection
-#   python src/test_model_runner.py --model qwen --prompts pii_extraction

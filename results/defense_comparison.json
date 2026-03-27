@@ -1,30 +1,134 @@
 [
   {
+    "model": "qwen",
+    "category": "jailbreak",
+    "baseline_asr": 0.94,
+    "combined_asr": 0.8,
+    "combined_reduction": 0.1489,
+    "hardened_prompt_asr": 0.78,
+    "hardened_prompt_reduction": 0.1702,
+    "input_sanitization_asr": 0.94,
+    "input_sanitization_reduction": 0.0
+  },
+  {
+    "model": "qwen",
+    "category": "pii_extraction",
+    "baseline_asr": 0.9,
+    "combined_asr": 0.76,
+    "combined_reduction": 0.1556,
+    "hardened_prompt_asr": 0.76,
+    "hardened_prompt_reduction": 0.1556,
+    "input_sanitization_asr": 0.9,
+    "input_sanitization_reduction": 0.0
+  },
+  {
+    "model": "qwen",
+    "category": "prompt_injection",
+    "baseline_asr": 0.8,
+    "combined_asr": 0.6,
+    "combined_reduction": 0.25,
+    "hardened_prompt_asr": 0.58,
+    "hardened_prompt_reduction": 0.275,
+    "input_sanitization_asr": 0.8,
+    "input_sanitization_reduction": 0.0
+  },
+  {
+    "model": "qwen",
+    "category": "overall",
+    "baseline_asr": 0.88,
+    "combined_asr": 0.72,
+    "combined_reduction": 0.1848,
+    "hardened_prompt_asr": 0.7067,
+    "hardened_prompt_reduction": 0.2003,
+    "input_sanitization_asr": 0.88,
+    "input_sanitization_reduction": 0.0
+  },
+  {
     "model": "llama",
     "category": "jailbreak",
     "baseline_asr": 0.74,
     "combined_asr": 0.64,
-    "combined_reduction": 0.1351
+    "combined_reduction": 0.1351,
+    "hardened_prompt_asr": 0.68,
+    "hardened_prompt_reduction": 0.0811,
+    "input_sanitization_asr": 0.68,
+    "input_sanitization_reduction": 0.0811
   },
   {
     "model": "llama",
     "category": "pii_extraction",
     "baseline_asr": 0.74,
     "combined_asr": 0.56,
-    "combined_reduction": 0.2432
+    "combined_reduction": 0.2432,
+    "hardened_prompt_asr": 0.56,
+    "hardened_prompt_reduction": 0.2432,
+    "input_sanitization_asr": 0.74,
+    "input_sanitization_reduction": 0.0
   },
   {
     "model": "llama",
     "category": "prompt_injection",
     "baseline_asr": 0.42,
     "combined_asr": 0.32,
-    "combined_reduction": 0.2381
+    "combined_reduction": 0.2381,
+    "hardened_prompt_asr": 0.3,
+    "hardened_prompt_reduction": 0.2857,
+    "input_sanitization_asr": 0.42,
+    "input_sanitization_reduction": 0.0
   },
   {
     "model": "llama",
     "category": "overall",
     "baseline_asr": 0.6333,
     "combined_asr": 0.5067,
-    "combined_reduction": 0.2055
+    "combined_reduction": 0.2055,
+    "hardened_prompt_asr": 0.5133,
+    "hardened_prompt_reduction": 0.2033,
+    "input_sanitization_asr": 0.6133,
+    "input_sanitization_reduction": 0.027
+  },
+  {
+    "model": "mistral",
+    "category": "jailbreak",
+    "baseline_asr": 0.92,
+    "combined_asr": 0.88,
+    "combined_reduction": 0.0435,
+    "hardened_prompt_asr": 0.9,
+    "hardened_prompt_reduction": 0.0217,
+    "input_sanitization_asr": 0.96,
+    "input_sanitization_reduction": -0.0435
+  },
+  {
+    "model": "mistral",
+    "category": "pii_extraction",
+    "baseline_asr": 0.96,
+    "combined_asr": 0.88,
+    "combined_reduction": 0.0833,
+    "hardened_prompt_asr": 0.88,
+    "hardened_prompt_reduction": 0.0833,
+    "input_sanitization_asr": 0.96,
+    "input_sanitization_reduction": 0.0
+  },
+  {
+    "model": "mistral",
+    "category": "prompt_injection",
+    "baseline_asr": 0.88,
+    "combined_asr": 0.7,
+    "combined_reduction": 0.2045,
+    "hardened_prompt_asr": 0.72,
+    "hardened_prompt_reduction": 0.1818,
+    "input_sanitization_asr": 0.86,
+    "input_sanitization_reduction": 0.0227
+  },
+  {
+    "model": "mistral",
+    "category": "overall",
+    "baseline_asr": 0.92,
+    "combined_asr": 0.82,
+    "combined_reduction": 0.1104,
+    "hardened_prompt_asr": 0.8333,
+    "hardened_prompt_reduction": 0.0956,
+    "input_sanitization_asr": 0.9267,
+    "input_sanitization_reduction": -0.0069
   }
 ]
