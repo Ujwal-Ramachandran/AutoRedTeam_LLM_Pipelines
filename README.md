@@ -216,7 +216,7 @@ Defense effectiveness (overall DRR — Defense Reduction Rate):
 
 | Model | Hardened Prompt | Input Sanitization | Combined |
 |-------|----------------|-------------------|---------|
-| Llama 3.1 8B | 20.3% | 2.7% | 20.6% |
+| Llama 3.1 8B | 20.3% | 2.7% | 20.53% |
 | Mistral 7B | 9.6% | −0.7% ⚠️ | 11.0% |
 | Qwen 2.5 7B | 20.0% | 0.0% | 18.5% |
 
